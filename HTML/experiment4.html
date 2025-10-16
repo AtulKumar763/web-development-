@@ -1,0 +1,195 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXPERIMENT4</title>
+</head>
+<body>
+    <table border="0" align="center" width="80%" cellspacing="0">
+        <caption><h1>HOTEL ROOM BOOKING FORM</h1></caption>
+        <tr>
+            <td >name</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+</html> -->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hotel Room Booking Form</title>
+  <style>
+    /* Page background and font */
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff;
+      margin: 0;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: start;
+      min-height: 100vh;
+    }
+
+    /* Outer box like the screenshot */
+    .form-wrap {
+      width: 360px;
+      border: 2px solid #222;
+      padding: 18px;
+      box-sizing: border-box;
+      background: #fff;
+    }
+
+    /* Title area */
+    .form-wrap h1 {
+      font-size: 18px;
+      text-align: center;
+      margin: 0 0 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    /* Form grid */
+    form .row {
+      display: flex;
+      align-items: center;
+      margin: 10px 0;
+      gap: 8px;
+    }
+
+    form label {
+      width: 95px;               /* label column width */
+      font-size: 13px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="date"],
+    select,
+    textarea {
+      flex: 1;
+      padding: 6px 8px;
+      font-size: 13px;
+      border: 1px solid #999;
+      border-radius: 2px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 70px;
+    }
+
+    /* Buttons */
+    .actions {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    button {
+      padding: 6px 12px;
+      font-size: 13px;
+      border: 1px solid #666;
+      background: #eee;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+
+    button:hover { filter: brightness(0.98); }
+
+    /* smaller helper text style */
+    .small {
+      font-size: 12px;
+      color: #444;
+    }
+
+    /* make inputs and labels stack for narrow screens */
+    @media (max-width: 420px) {
+      .form-wrap { width: 95%; }
+      form .row { flex-direction: column; align-items: stretch; }
+      form label { width: auto; margin-bottom: 6px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-wrap" role="region" aria-labelledby="formTitle">
+    <h1 id="formTitle">Hotel Room Booking Form</h1>
+
+    <form id="bookingForm" action="#" method="post" novalidate>
+      <div class="row">
+        <label for="fullname">Full Name:</label>
+        <input id="fullname" name="fullname" type="text" placeholder="Your full name" required>
+      </div>
+
+      <div class="row">
+        <label for="email">Email:</label>
+        <input id="email" name="email" type="email" placeholder="name@example.com" required>
+      </div>
+
+      <div class="row">
+        <label for="phone">Phone:</label>
+        <input id="phone" name="phone" type="tel" placeholder="+91 98765 43210">
+      </div>
+
+      <div class="row">
+        <label for="checkin">Check-in Date:</label>
+        <input id="checkin" name="checkin" type="date" aria-describedby="checkinHelp">
+      </div>
+
+      <div class="row">
+        <label for="checkout">Check-out Date:</label>
+        <input id="checkout" name="checkout" type="date" aria-describedby="checkoutHelp">
+      </div>
+
+      <div class="row">
+        <label for="roomType">Room Type:</label>
+        <select id="roomType" name="roomType">
+          <option value="">-- Select --</option>
+          <option value="single">Single Room</option>
+          <option value="double">Double Room</option>
+          <option value="suite">Suite</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <label for="guests">Number of Guests:</label>
+        <input id="guests" name="guests" type="number" min="1" max="10" value="1">
+      </div>
+
+      <div class="row" style="flex-direction: column; align-items: stretch;">
+        <label for="requests">Special Requests:</label>
+        <textarea id="requests" name="requests" placeholder="Any extra requests (rooms, food, accessibility)..."></textarea>
+      </div>
+
+      <div class="actions">
+        <button type="submit">Book Now</button>
+        <button type="reset">Reset Form</button>
+      </div>
+    </form>
+
+  </div>
+
+  <script>
+    // Small client-side behavior: prevent actual submission and show data in console
+    document.getElementById('bookingForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const data = new FormData(this);
+      const obj = Object.fromEntries(data.entries());
+      console.log('Booking submitted:', obj);
+      alert('Booking submitted — check console for data (this is a demo).');
+    });
+  </script>
+</body>
+</html>
