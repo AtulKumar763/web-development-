@@ -1,0 +1,37 @@
+body{
+    background-color: blue;
+    margin: 0;
+    padding: 0;
+    /* background-image:url('pexels-arts-1547813.jpg');
+    background-size: cover; */
+    /* background-repeat: repeat-x;
+    background-position: top right 1px; */
+}
+html,*{
+     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+p{
+    font-family: Arial;
+    font-size: 50px ;
+    font-weight: 700;
+    font-style: italic;
+    text-align: center;
+    text-decoration: underline;
+    text-transform: uppercase;
+    text-shadow: 2px 0px 10px #000;
+    display: inline-block;
+}
+#para{
+    color: chartreuse;
+    text-align: center;
+}
+img{
+    /* display: inline; */
+    float: left;
+    margin-right: 20px;
+    border: 10px solid #000;
+    border-radius: 50%;
+}
+
